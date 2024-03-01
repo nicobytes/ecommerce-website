@@ -1,7 +1,6 @@
-import { Component, Input, SimpleChanges, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 
-import { Product } from '../../models/product.model';
-import { CartService } from '../../services/cart.service';
+import { CartService } from '@services/cart.service';
 import { RouterLinkWithHref, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -9,7 +8,6 @@ import { RouterLinkWithHref, RouterLinkActive } from '@angular/router';
   standalone: true,
   imports: [RouterLinkWithHref, RouterLinkActive],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
   hideSideMenu = signal(true);

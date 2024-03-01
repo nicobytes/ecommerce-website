@@ -25,6 +25,8 @@
     ],
     "paths": {
       "@shared/*": ["./src/app/domains/shared/*"],
+      "@services/*": ["./src/app/services/*"],
+      "@models/*": ["./src/app/models/*"],
       "@products/*": ["./src/app/domains/products/*"],
       "@info/*": ["./src/app/domains/info/*"],
     }

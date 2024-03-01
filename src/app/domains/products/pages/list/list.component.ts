@@ -1,22 +1,21 @@
-import { Component, Input, SimpleChanges, inject, signal } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, inject, signal } from '@angular/core';
 
 import { RouterLinkWithHref } from '@angular/router';
 import { ProductComponent } from '@products/components/product/product.component';
 import { HeaderComponent } from '@shared/components/header/header.component';
-import { Product } from '@shared/models/product.model';
-import { CartService } from '@shared/services/cart.service';
-import { ProductService } from '@shared/services/product.service';
-import { CategoryService } from '@shared/services/category.service';
-import { Category } from '@shared/models/category.model';
+import { Product } from '@models/product.model';
+import { CartService } from '@services/cart.service';
+import { ProductService } from '@services/product.service';
+import { CategoryService } from '@services/category.service';
+import { Category } from '@models/category.model';
 
 @Component({
   selector: 'app-list',
   standalone: true,
   imports: [ProductComponent, HeaderComponent, RouterLinkWithHref],
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
 })
-export default class ListComponent {
+export default class ListComponent implements OnInit, OnChanges {
   products = signal<Product[]>([]);
   categories = signal<Category[]>([]);
   private cartService = inject(CartService);

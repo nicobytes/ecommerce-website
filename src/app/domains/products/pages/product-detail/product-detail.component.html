@@ -12,7 +12,10 @@
         @for (img of product()?.images; track img) {
           <img
             alt="ecommerce"
+            [attr.aria-hidden]="true"
             class="object-cover object-center rounded border-2 border-gray-200"
+            [alt]="product()?.title"
+            (keyup.enter)="changeCover(img)"
             [src]="img"
             (click)="changeCover(img)"
             [class.border-red-400]="img === cover()"
